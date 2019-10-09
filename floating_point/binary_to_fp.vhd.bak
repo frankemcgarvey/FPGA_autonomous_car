@@ -1,0 +1,64 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+
+
+entity binary_to_fp is
+	port(
+		inputInteger     : in  std_logic_vector(127 downto 0) := (others => '0');
+		inputDecimal     : in  std_logic_vector(125 downto 0) := (others => '0');
+		output    : out std_logic_vector(31 downto 0) := x"00"
+		);
+end binary_to_fp;
+
+
+
+architecture behavioral of binary_to_fp is
+
+begin
+
+
+	
+	
+	output(31)    <= inputInteger(127);
+	
+--	output(30-23) <= 
+
+
+
+
+end behavioral;
+
+
+
+library ieee;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+
+package encoder_package is
+
+	function encoder (input : std_logic_vector(127 downto 0)) return std_logic_vector;
+
+end package;
+
+
+package body encoder_package is
+
+	function encoder (input : std_logic_vector(127 downto 0)) return std_logic_vector is
+	
+begin
+
+	for i in 127 downto 0 loop
+	
+		if(input(i) = '1') then return std_logic_vector(to_unsigned(i,8));
+		end if;
+	
+	end loop;
+
+
+end function;
+
+	
+
+end package body; 

@@ -1,0 +1,112 @@
+library ieee;	  
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+
+entity carDriver is	
+	generic(
+	switchingFreq    : natural := 100_000;
+	clkFreq          : natural := 50_000_000
+	);
+	port(
+	clk50         : in   std_logic := '0';
+	input	 	  : in   std_logic_vector(7 downto 0) := (others => '0');
+	direction     : out  std_logic_vector(7 downto 0) := (others => '0');   
+	pmw           : out  std_logic_vector(3 downto 0) := (others => '0')
+	);
+end carDriver;
+
+architecture dataflow of carDriver is 
+
+constant busFreq : natural := clkFreq/switchingFreq;
+type directions is(Forward, Backward);
+
+signal bias : directions;	
+
+signal reset : std_logic := '0';
+signal CD    : std_logic := '0';
+signal changeDirection : std_logic  := '0';
+signal width0, width1 : natural range 0 to busFreq;
+
+signal waiting, allow : std_logic := '0';
+
+constant forwards  : std_logic_vector(7 downto 0) := x"AA";  
+
+begin	
+	
+	
+	
+	process(all)
+	variable directionCounter : natural range 0 to 25_000_000; 
+	variable enable : std_logic := '0';
+	begin
+		
+		if(rising_edge(clk50)) then	
+		
+			if(enable = '0') then
+				if(unsigned(input) > 119) then enable := '1';	 
+											   changeDirection <= not changeDirection;
+				end if;																								   
+			end if;	 
+			
+			
+			
+			if(enable = '1') then 
+				if(directionCounter = 10_000) then 	enable := '0';	
+													directionCounter := 0;
+				else 								directionCounter := directionCounter + 1;
+				end if;
+			end if;		  
+																																	   
+		end if;
+		
+	end process;
+	
+	
+	with changeDirection select direction <=
+											forwards  	 when '1',
+											not forwards when '0',
+											forwards     when others;
+								
+								
+								
+								
+	width0 <= busFreq/2;
+	width1 <= busFreq/2;
+	
+	process(all) 
+	variable counter0,
+			 counter1     : natural range 0 to busFreq;
+	begin		
+		
+		
+		if(rising_edge(clk50)) then	
+									if(reset = '1') then counter0 := 0;
+														 counter1 := 0;
+									else				 
+										counter0 := counter0 + 1;	  
+										counter1 := counter1 + 1; 
+										if(counter0 = busFreq) then counter0 := 0;
+										end if;
+										if(counter1 = busFreq) then counter1 := 0;
+										end if;	   
+										
+									end if;
+		end if;
+		
+		if(counter0 < width0) then pmw(1 downto 0) <= "11";
+		else                       pmw(1 downto 0) <= "00";
+		end if;
+		
+		if(counter1 < width1) then pmw(3 downto 2) <= "11";
+		else                       pmw(3 downto 2) <= "00";
+		end if;
+	
+	end process;
+								
+								
+								
+								
+	
+	
+end dataflow;

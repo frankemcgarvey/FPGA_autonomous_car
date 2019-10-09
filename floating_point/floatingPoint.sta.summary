@@ -1,0 +1,89 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -4.050
+TNS   : -155.146
+
+Type  : Slow 1200mV 85C Model Setup 'i2c_master:inst1|data_clk'
+Slack : -3.534
+TNS   : -85.801
+
+Type  : Slow 1200mV 85C Model Hold 'i2c_master:inst1|data_clk'
+Slack : -0.387
+TNS   : -0.993
+
+Type  : Slow 1200mV 85C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'i2c_master:inst1|data_clk'
+Slack : -1.000
+TNS   : -45.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.746
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
+Slack : 4.835
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.478
+TNS   : -99.361
+
+Type  : Slow 1200mV 0C Model Setup 'i2c_master:inst1|data_clk'
+Slack : -3.072
+TNS   : -74.054
+
+Type  : Slow 1200mV 0C Model Hold 'i2c_master:inst1|data_clk'
+Slack : -0.263
+TNS   : -0.681
+
+Type  : Slow 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'i2c_master:inst1|data_clk'
+Slack : -1.000
+TNS   : -45.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.743
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
+Slack : 4.818
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.192
+TNS   : -55.454
+
+Type  : Fast 1200mV 0C Model Setup 'i2c_master:inst1|data_clk'
+Slack : -1.665
+TNS   : -35.934
+
+Type  : Fast 1200mV 0C Model Hold 'i2c_master:inst1|data_clk'
+Slack : -0.413
+TNS   : -1.386
+
+Type  : Fast 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'i2c_master:inst1|data_clk'
+Slack : -1.899
+TNS   : -85.455
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
+Slack : 4.587
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.770
+TNS   : 0.000
+
+------------------------------------------------------------

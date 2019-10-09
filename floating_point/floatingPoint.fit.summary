@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Aug 31 20:17:13 2019
+Quartus II 64-Bit Version : 10.1 Build 153 11/29/2010 SJ Web Edition
+Revision Name : floatingPoint
+Top-level Entity Name : schematic
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 2,324 / 22,320 ( 10 % )
+    Total combinational functions : 2,228 / 22,320 ( 10 % )
+    Dedicated logic registers : 593 / 22,320 ( 3 % )
+Total registers : 593
+Total pins : 29 / 154 ( 19 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

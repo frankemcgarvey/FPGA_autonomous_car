@@ -1,0 +1,74 @@
+
+State Machine - |schematic|colorBox:inst6|state
+Name state.Result state.Multiply state.Divide state.Combine state.Read_Data state.Idle 
+state.Idle 0 0 0 0 0 0 
+state.Read_Data 0 0 0 0 1 1 
+state.Combine 0 0 0 1 0 1 
+state.Divide 0 0 1 0 0 1 
+state.Multiply 0 1 0 0 0 1 
+state.Result 1 0 0 0 0 1 
+
+State Machine - |schematic|colorBox:inst6|fp_division:div|State
+Name State.Done State.Normalize State.Subtract State.Compare State.Shift State.CheckZero State.StartUp State.Idle 
+State.Idle 0 0 0 0 0 0 0 0 
+State.StartUp 0 0 0 0 0 0 1 1 
+State.CheckZero 0 0 0 0 0 1 0 1 
+State.Shift 0 0 0 0 1 0 0 1 
+State.Compare 0 0 0 1 0 0 0 1 
+State.Subtract 0 0 1 0 0 0 0 1 
+State.Normalize 0 1 0 0 0 0 0 1 
+State.Done 1 0 0 0 0 0 0 1 
+
+State Machine - |schematic|colorBox:inst3|state
+Name state.Result state.Multiply state.Divide state.Combine state.Read_Data state.Idle 
+state.Idle 0 0 0 0 0 0 
+state.Read_Data 0 0 0 0 1 1 
+state.Combine 0 0 0 1 0 1 
+state.Divide 0 0 1 0 0 1 
+state.Multiply 0 1 0 0 0 1 
+state.Result 1 0 0 0 0 1 
+
+State Machine - |schematic|colorBox:inst3|fp_division:div|State
+Name State.Done State.Normalize State.Subtract State.Compare State.Shift State.CheckZero State.StartUp State.Idle 
+State.Idle 0 0 0 0 0 0 0 0 
+State.StartUp 0 0 0 0 0 0 1 1 
+State.CheckZero 0 0 0 0 0 1 0 1 
+State.Shift 0 0 0 0 1 0 0 1 
+State.Compare 0 0 0 1 0 0 0 1 
+State.Subtract 0 0 1 0 0 0 0 1 
+State.Normalize 0 1 0 0 0 0 0 1 
+State.Done 1 0 0 0 0 0 0 1 
+
+State Machine - |schematic|userInterface:inst2|prev_State
+Name prev_State.Hold prev_State.Write1 prev_State.Write0 prev_State.Read2 prev_State.Read1 prev_State.Read0 prev_State.Initialize prev_State.StartUp 
+prev_State.StartUp 0 0 0 0 0 0 0 0 
+prev_State.Initialize 0 0 0 0 0 0 1 1 
+prev_State.Read0 0 0 0 0 0 1 0 1 
+prev_State.Read1 0 0 0 0 1 0 0 1 
+prev_State.Read2 0 0 0 1 0 0 0 1 
+prev_State.Write0 0 0 1 0 0 0 0 1 
+prev_State.Write1 0 1 0 0 0 0 0 1 
+prev_State.Hold 1 0 0 0 0 0 0 1 
+
+State Machine - |schematic|i2c_master:inst1|prev_State
+Name prev_State.noAck prev_State.Read_Again prev_State.Read_Data prev_State.Ack5 prev_State.Initiate_Read prev_State.restartR prev_State.restartL prev_State.Ack4 prev_State.RD_Address prev_State.Ack3 prev_State.Write_Data prev_State.Ack2 prev_State.WR_Address prev_State.Hold prev_State.Stop prev_State.Ack1 prev_State.Slave_Address prev_State.Start prev_State.Idle prev_State.StartUp 
+prev_State.StartUp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+prev_State.Idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+prev_State.Start 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+prev_State.Slave_Address 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+prev_State.Ack1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+prev_State.Stop 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+prev_State.Hold 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+prev_State.WR_Address 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+prev_State.Ack2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+prev_State.Write_Data 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+prev_State.Ack3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+prev_State.RD_Address 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.Ack4 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.restartL 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.restartR 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.Initiate_Read 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.Ack5 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.Read_Data 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.Read_Again 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_State.noAck 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
